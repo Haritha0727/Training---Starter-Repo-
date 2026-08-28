@@ -28,6 +28,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
+    
+      - name: Inspect files
+        run: ls -R .
 
       - name: Build application
         run: |
