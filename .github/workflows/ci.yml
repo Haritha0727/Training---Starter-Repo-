@@ -2,6 +2,10 @@ name: CI
 
 on: # trigger
   workflow_dispatch: # manual button to run this workflow
+  
+  push:
+    branches:
+      - main
 
 jobs:
   hello: # name of our job
@@ -10,6 +14,9 @@ jobs:
     steps:
 
       - uses: actions/checkout@v7
+
+      - name: Show trigger
+        run: echo "Triggered by ${{ github.event_name }}"
       
       - name: Show environment
         run: |
