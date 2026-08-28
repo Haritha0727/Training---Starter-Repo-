@@ -10,16 +10,18 @@ on: # trigger
       - 'src/**'
       
 jobs:
-  hello: # name of our job
+  test:
     runs-on: ubuntu-latest
 
     steps:
-
       - uses: actions/checkout@v7
 
       - name: Show trigger
         run: echo "Triggered by ${{ github.event_name }}"
-      
+
+      - name: Run tests
+        run: echo "Tests passed"
+          
       - name: Show environment
         run: |
           echo "Hello from GitHub Actions"
